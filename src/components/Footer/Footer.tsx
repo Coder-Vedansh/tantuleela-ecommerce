@@ -8,7 +8,7 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={`container ${styles.footerContainer}`}>
         <div className={styles.column}>
-          <h3 className={styles.logo}>Tantuleela</h3>
+          <h3 className={styles.logo}>Sringarika</h3>
           <p className={styles.description}>
             Every Thread Woven with Devotion. Handcrafted crochet dresses and accessories for Lord Krishna idols, made with love and patience.
           </p>
@@ -46,7 +46,7 @@ export const Footer = () => {
           <ul className={styles.contactList}>
             <li>
               <Mail size={16} />
-              <a href="mailto:namaste@tantuleela.com">namaste@tantuleela.com</a>
+              <a href="mailto:namaste@sringarika.com">namaste@sringarika.com</a>
             </li>
             <li>
               <Phone size={16} />
@@ -61,7 +61,7 @@ export const Footer = () => {
       </div>
       <div className={styles.bottomBar}>
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Tantuleela. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Sringarika. All rights reserved.</p>
           <p className={styles.tagline}>सूत्रे सूत्रे भक्तिरस्ति, प्रेम्णा कृष्णः विभूष्यते॥</p>
         </div>
       </div>

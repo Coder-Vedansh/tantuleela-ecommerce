@@ -10,27 +10,27 @@ const MOCK_BESTSELLERS = [
     id: "1",
     name: "Peacock Motif Yellow Dress",
     price: 1250,
-    imageUrl: "https://placehold.co/600x800/D6E4F0/2C3E50?text=Yellow+Dress",
+    imageUrl: "/images/1.png",
     isNew: true
   },
   {
     id: "2",
     name: "Lotus Pink Night Outfit",
     price: 850,
-    imageUrl: "https://placehold.co/600x800/F3E5AB/2C3E50?text=Pink+Outfit"
+    imageUrl: "/images/2.png"
   },
   {
     id: "3",
     name: "Royal Blue Festival Set",
     price: 2100,
-    imageUrl: "https://placehold.co/600x800/005B8F/FFFFFF?text=Festival+Set",
+    imageUrl: "/images/3.png",
     isNew: true
   },
   {
     id: "4",
     name: "Cream & Gold Winter Wear",
     price: 1500,
-    imageUrl: "https://placehold.co/600x800/FFFFF0/003F66?text=Winter+Wear"
+    imageUrl: "/images/4.png"
   }
 ];
 
@@ -41,7 +41,7 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroBackground}>
           <img 
-            src="https://placehold.co/1920x1080/FDFBF7/D4AF37?text=Premium+Crochet+Hero" 
+            src="/images/1.png" 
             alt="Handcrafted Crochet for Lord Krishna" 
             className={styles.heroImage}
           />
@@ -65,7 +65,7 @@ export default function Home() {
         <div className={`container ${styles.storyContainer}`}>
           <div className={styles.storyImageWrapper}>
             <img 
-              src="https://placehold.co/800x1000/F3E5AB/005B8F?text=Our+Story" 
+              src="/images/2.png" 
               alt="A mother crafting crochet" 
               className={styles.storyImage}
             />
@@ -118,7 +118,7 @@ export default function Home() {
       <section className={styles.newsletter}>
         <div className="container">
           <div className={styles.newsletterCard}>
-            <h2 className={styles.newsletterTitle}>Join the Tantuleela Family</h2>
+            <h2 className={styles.newsletterTitle}>Join the Sringarika Family</h2>
             <p className={styles.newsletterText}>
               Subscribe to receive updates on new collections, festive offers, and stories of devotion.
             </p>

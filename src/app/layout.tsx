@@ -16,7 +16,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Tantuleela | Handcrafted Crochet for Lord Krishna",
+  title: "Sringarika | Handcrafted Crochet for Lord Krishna",
   description: "Premium handcrafted crochet dresses and accessories for Lord Krishna idols. Every thread woven with devotion.",
 };
 

@@ -30,7 +30,7 @@ export const Navbar = () => {
 
         <div className={styles.logoSection}>
           <Link href="/">
-            <h1 className={styles.logo}>Tantuleela</h1>
+            <h1 className={styles.logo}>Sringarika</h1>
           </Link>
         </div>
 
