@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/UI/Button";
 import { ProductCard } from "@/components/ProductCard";
 import styles from "./page.module.css";
@@ -47,8 +48,12 @@ export default function Home() {
               Premium handcrafted crochet dresses and accessories for Lord Krishna idols, made with love and patience.
             </p>
             <div className={styles.heroActions}>
-              <Button size="lg" onClick={() => window.location.href = '/shop'}>Explore Collection</Button>
-              <Button variant="outline" size="lg" onClick={() => window.location.href = '/custom-orders'}>Custom Orders</Button>
+              <Link href="/shop" passHref>
+                <Button size="lg">Explore Collection</Button>
+              </Link>
+              <Link href="/custom-orders" passHref>
+                <Button variant="outline" size="lg">Custom Orders</Button>
+              </Link>
             </div>
           </div>
           <div className={styles.heroImageWrapper}>
