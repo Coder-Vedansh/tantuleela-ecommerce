@@ -1,142 +1,318 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
+.home {
   display: flex;
-  flex: 1;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
 }
 
-.main {
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 90vh;
   display: flex;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(253, 251, 247, 0.95) 0%, rgba(253, 251, 247, 0.7) 50%, rgba(253, 251, 247, 0.3) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
   max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  padding: var(--spacing-3xl) var(--spacing-md);
+  margin-right: auto;
+  margin-left: 0;
+  animation: fadeIn 1s ease-out;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
+.tagline {
+  font-family: var(--font-heading);
+  color: var(--color-gold);
+  font-size: 1.25rem;
   font-weight: 500;
-  color: var(--text-primary);
+  display: block;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 1px;
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+.heroTitle {
+  font-size: 4rem;
+  color: var(--color-peacock-dark);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.1;
 }
 
-.ctas a {
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-2xl);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.heroActions {
   display: flex;
-  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+/* Story Section */
+.storySection {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-ivory);
+}
+
+.storyContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.storyImageWrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.storyImageWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 0 20px var(--color-ivory);
+  pointer-events: none;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
+.storyImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+.storyImageWrapper:hover .storyImage {
+  transform: scale(1.05);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-gold);
+}
+
+.storyText {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.8;
+}
+
+.storyBtn {
+  padding-left: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Best Sellers */
+.bestsellers {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-cream);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+/* Testimonials */
+.testimonials {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-peacock-blue);
+  color: var(--color-cream);
+  text-align: center;
+  position: relative;
+}
+
+.testimonialContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quoteIcon {
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.5;
+}
+
+.testimonialText {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-cream);
+}
+
+.testimonialAuthor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.authorName {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-gold-light);
+}
+
+.authorLocation {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Newsletter */
+.newsletter {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-ivory);
+}
+
+.newsletterCard {
+  background-color: var(--color-surface);
+  padding: var(--spacing-3xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+}
+
+.newsletterTitle {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-peacock-dark);
+}
+
+.newsletterText {
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xl);
+}
+
+.newsletterForm {
+  display: flex;
+  gap: var(--spacing-sm);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.newsletterInput:focus {
+  border-color: var(--color-peacock-blue);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .storyContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .heroTitle {
+    font-size: 3rem;
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
   }
-
-  .intro {
-    gap: 16px;
+  
+  .heroActions {
+    flex-direction: column;
   }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+  
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+  
+  .testimonialText {
+    font-size: 1.5rem;
   }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  
+  .newsletterForm {
+    flex-direction: column;
   }
 }

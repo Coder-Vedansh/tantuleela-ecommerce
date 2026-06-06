@@ -1,0 +1,197 @@
+.customOrderPage {
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+.headerBanner {
+  background-color: var(--color-peacock-dark);
+  color: var(--color-cream);
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+  border-bottom: 4px solid var(--color-gold);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-cream);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--color-pastel-blue);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-3xl);
+  padding: var(--spacing-3xl) var(--spacing-md);
+}
+
+.instructionSidebar {
+  background-color: var(--color-surface);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  align-self: start;
+}
+
+.sidebarTitle {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--color-peacock-dark);
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 2px solid var(--color-gold-light);
+  padding-bottom: var(--spacing-sm);
+  display: inline-block;
+}
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.stepsList li {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.stepNumber {
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-peacock-blue);
+  color: var(--color-cream);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.stepContent h3 {
+  font-size: 1.1rem;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-xs);
+}
+
+.stepContent p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.formSection {
+  background-color: var(--color-surface);
+  padding: var(--spacing-3xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.customForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.formRow {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.formRow > * {
+  flex: 1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--color-text-main);
+  font-size: 0.95rem;
+}
+
+.input, .select, .textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background-color: var(--color-background);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--color-peacock-blue);
+  box-shadow: 0 0 0 2px rgba(0, 91, 143, 0.1);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.uploadArea {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  background-color: var(--color-background);
+  text-align: center;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.uploadArea:hover {
+  border-color: var(--color-peacock-blue);
+  background-color: rgba(214, 228, 240, 0.2);
+}
+
+.uploadIcon {
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
+.uploadHint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+.submitBtn {
+  margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 992px) {
+  .formContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .formRow {
+    flex-direction: column;
+  }
+  
+  .formSection {
+    padding: var(--spacing-xl);
+  }
+}
