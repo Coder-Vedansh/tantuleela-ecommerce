@@ -39,23 +39,25 @@ export default function Home() {
     <div className={styles.home}>
       {/* Hero Section */}
       <section className={styles.hero}>
-        <div className={styles.heroBackground}>
-          <img 
-            src="/images/1.png" 
-            alt="Handcrafted Crochet for Lord Krishna" 
-            className={styles.heroImage}
-          />
-          <div className={styles.heroOverlay}></div>
-        </div>
-        <div className={`container ${styles.heroContent}`}>
-          <span className={styles.tagline}>सूत्रे सूत्रे भक्तिरस्ति, प्रेम्णा कृष्णः विभूष्यते॥</span>
-          <h1 className={styles.heroTitle}>Every Thread Woven with Devotion</h1>
-          <p className={styles.heroSubtitle}>
-            Premium handcrafted crochet dresses and accessories for Lord Krishna idols, made with love and patience.
-          </p>
-          <div className={styles.heroActions}>
-            <Button size="lg">Explore Collection</Button>
-            <Button variant="outline" size="lg">Custom Orders</Button>
+        <div className={`container ${styles.heroContainer}`}>
+          <div className={styles.heroContent}>
+            <span className={styles.tagline}>सूत्रे सूत्रे भक्तिरस्ति, प्रेम्णा कृष्णः विभूष्यते॥</span>
+            <h1 className={styles.heroTitle}>Every Thread Woven <br/> with Devotion</h1>
+            <p className={styles.heroSubtitle}>
+              Premium handcrafted crochet dresses and accessories for Lord Krishna idols, made with love and patience.
+            </p>
+            <div className={styles.heroActions}>
+              <Button size="lg" onClick={() => window.location.href = '/shop'}>Explore Collection</Button>
+              <Button variant="outline" size="lg" onClick={() => window.location.href = '/custom-orders'}>Custom Orders</Button>
+            </div>
+          </div>
+          <div className={styles.heroImageWrapper}>
+            <div className={styles.heroImageCircle}></div>
+            <img 
+              src="/images/1.png" 
+              alt="Handcrafted Crochet for Lord Krishna" 
+              className={styles.heroImage}
+            />
           </div>
         </div>
       </section>

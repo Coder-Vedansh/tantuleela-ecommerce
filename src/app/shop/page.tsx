@@ -8,10 +8,10 @@ const MOCK_PRODUCTS = [
   { id: "2", name: "Lotus Pink Night Outfit", price: 850, imageUrl: "/images/2.png" },
   { id: "3", name: "Royal Blue Festival Set", price: 2100, imageUrl: "/images/3.png", isNew: true },
   { id: "4", name: "Cream & Gold Winter Wear", price: 1500, imageUrl: "/images/4.png" },
-  { id: "5", name: "Emerald Green Summer Set", price: 1100, imageUrl: "/images/1.png
-  { id: "6", name: "Pearl White Everyday Dress", price: 750, imageUrl: "/images/1.png
-  { id: "7", name: "Ruby Red Festive Special", price: 2500, imageUrl: "/images/1.png
-  { id: "8", name: "Purple Flute Pattern Dress", price: 1350, imageUrl: "/images/1.png
+  { id: "5", name: "Emerald Green Summer Set", price: 1100, imageUrl: "/images/1.png" },
+  { id: "6", name: "Pearl White Everyday Dress", price: 750, imageUrl: "/images/1.png" },
+  { id: "7", name: "Ruby Red Festive Special", price: 2500, imageUrl: "/images/1.png" },
+  { id: "8", name: "Purple Flute Pattern Dress", price: 1350, imageUrl: "/images/1.png" }
 ];
 
 export default function ShopPage() {
