@@ -1,9 +1,11 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ShoppingBag, Heart } from 'lucide-react';
 import styles from './ProductCard.module.css';
 import { Button } from '../UI/Button';
+import { useCartStore } from '@/lib/store';
 
 export interface Product {
   id: string;
@@ -18,6 +20,20 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ product }: ProductCardProps) => {
+  const addItem = useCartStore((state) => state.addItem);
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent Link navigation if wrapped inside one, though here it's isolated
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      imageUrl: product.imageUrl,
+      quantity: 1
+    });
+    alert(`Added ${product.name} to cart!`);
+  };
+
   return (
     <div className={styles.card}>
       <Link href={`/shop/${product.id}`} className={styles.imageWrapper}>
@@ -43,7 +59,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           <h3 className={styles.title}>{product.name}</h3>
         </Link>
         <p className={styles.price}>₹{product.price.toLocaleString('en-IN')}</p>
-        <Button variant="outline" fullWidth className={styles.addToCartBtn}>
+        <Button variant="outline" fullWidth className={styles.addToCartBtn} onClick={handleAddToCart}>
           <ShoppingBag size={18} />
           Add to Cart
         </Button>

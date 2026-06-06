@@ -5,37 +5,15 @@ import { ProductCard } from "@/components/ProductCard";
 import styles from "./page.module.css";
 import { ArrowRight, Star, Quote } from "lucide-react";
 
-// Mock Data
-const MOCK_BESTSELLERS = [
-  {
-    id: "1",
-    name: "Peacock Motif Yellow Dress",
-    price: 1250,
-    imageUrl: "/images/1.png",
-    isNew: true
-  },
-  {
-    id: "2",
-    name: "Lotus Pink Night Outfit",
-    price: 850,
-    imageUrl: "/images/2.png"
-  },
-  {
-    id: "3",
-    name: "Royal Blue Festival Set",
-    price: 2100,
-    imageUrl: "/images/3.png",
-    isNew: true
-  },
-  {
-    id: "4",
-    name: "Cream & Gold Winter Wear",
-    price: 1500,
-    imageUrl: "/images/4.png"
-  }
-];
+import prisma from '@/lib/prisma';
 
-export default function Home() {
+export const dynamic = 'force-dynamic';
+
+export default async function Home() {
+  const products = await prisma.product.findMany({
+    take: 4,
+    orderBy: { createdAt: 'desc' }
+  });
   return (
     <div className={styles.home}>
       {/* Hero Section */}
@@ -97,7 +75,7 @@ export default function Home() {
             <Button variant="ghost">View All <ArrowRight size={16} /></Button>
           </div>
           <div className={styles.productGrid}>
-            {MOCK_BESTSELLERS.map((product) => (
+            {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

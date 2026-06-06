@@ -3,18 +3,14 @@ import { ProductCard } from '@/components/ProductCard';
 import { Filter, ChevronDown } from 'lucide-react';
 import styles from './page.module.css';
 
-const MOCK_PRODUCTS = [
-  { id: "1", name: "Peacock Motif Yellow Dress", price: 1250, imageUrl: "/images/1.png", isNew: true },
-  { id: "2", name: "Lotus Pink Night Outfit", price: 850, imageUrl: "/images/2.png" },
-  { id: "3", name: "Royal Blue Festival Set", price: 2100, imageUrl: "/images/3.png", isNew: true },
-  { id: "4", name: "Cream & Gold Winter Wear", price: 1500, imageUrl: "/images/4.png" },
-  { id: "5", name: "Emerald Green Summer Set", price: 1100, imageUrl: "/images/1.png" },
-  { id: "6", name: "Pearl White Everyday Dress", price: 750, imageUrl: "/images/1.png" },
-  { id: "7", name: "Ruby Red Festive Special", price: 2500, imageUrl: "/images/1.png" },
-  { id: "8", name: "Purple Flute Pattern Dress", price: 1350, imageUrl: "/images/1.png" }
-];
+import prisma from '@/lib/prisma';
 
-export default function ShopPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function ShopPage() {
+  const products = await prisma.product.findMany({
+    orderBy: { createdAt: 'desc' }
+  });
   return (
     <div className={styles.shopContainer}>
       <div className={styles.shopHeader}>
@@ -96,7 +92,7 @@ export default function ShopPage() {
           </div>
 
           <div className={styles.productGrid}>
-            {MOCK_PRODUCTS.map(product => (
+            {products.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
