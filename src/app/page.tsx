@@ -35,12 +35,6 @@ export default async function Home() {
             </div>
           </div>
           <div className={styles.heroImageWrapper}>
-            <div className={styles.heroImageCircle}></div>
-            <img 
-              src="/images/1.png" 
-              alt="Handcrafted Crochet for Lord Krishna" 
-              className={styles.heroImage}
-            />
             <div className={styles.cssDecoration}>
               <div className={styles.flute}>
                 <div className={styles.fluteHole}></div>

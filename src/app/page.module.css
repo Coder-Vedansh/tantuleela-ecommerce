@@ -34,56 +34,38 @@
   justify-content: center;
   align-items: center;
   animation: float 6s ease-in-out infinite;
-}
-
-.heroImageCircle {
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, rgba(255,215,0,0) 70%);
-  border-radius: 50%;
-  z-index: 1;
-  box-shadow: 0 0 50px rgba(255,215,0,0.3);
-  animation: pulse 4s infinite alternate;
-}
-
-.heroImage {
-  position: relative;
-  z-index: 2;
-  width: auto;
-  max-width: 90%;
-  height: 600px;
-  object-fit: contain;
-  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+  min-height: 400px;
 }
 
 .cssDecoration {
-  position: absolute;
+  position: relative;
   z-index: 3;
-  bottom: -40px;
-  right: -60px;
-  width: 300px;
-  height: 300px;
-  animation: float 5s ease-in-out infinite alternate-reverse;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.5);
   pointer-events: none;
 }
 
 /* Flute CSS */
 .flute {
   position: absolute;
-  top: 120px;
-  left: 20px;
-  width: 250px;
-  height: 14px;
-  background: linear-gradient(to bottom, #d4af37, #aa7c11, #d4af37);
-  border-radius: 7px;
-  transform: rotate(-30deg);
-  box-shadow: 2px 4px 10px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.4);
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 20px;
+  background: linear-gradient(to bottom, #3a2b10, #1f1709, #3a2b10);
+  border-radius: 10px;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  box-shadow: 4px 8px 20px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 30px;
-  gap: 12px;
+  padding-right: 40px;
+  gap: 16px;
+  z-index: 2;
 }
 
 .flute::before {
@@ -91,85 +73,85 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 10px;
+  width: 15px;
   height: 100%;
-  background: #8b6508;
-  border-radius: 7px 0 0 7px;
+  background: #110d05;
+  border-radius: 10px 0 0 10px;
 }
 
 .flute::after {
   content: '';
   position: absolute;
-  left: 30px;
-  top: -2px;
-  width: 4px;
-  height: 18px;
-  background: #8b6508;
-  border-radius: 2px;
+  left: 45px;
+  top: -3px;
+  width: 6px;
+  height: 26px;
+  background: #110d05;
+  border-radius: 3px;
 }
 
 .fluteHole {
-  width: 6px;
-  height: 6px;
-  background: #332200;
+  width: 10px;
+  height: 10px;
+  background: #000000;
   border-radius: 50%;
-  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.8);
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,1);
 }
 
 .fluteTassel {
   position: absolute;
-  right: 15px;
-  top: 14px;
-  width: 2px;
-  height: 60px;
-  background: #d4af37;
+  right: 20px;
+  top: 20px;
+  width: 3px;
+  height: 80px;
+  background: #1a1a1a;
   transform: rotate(30deg);
 }
 
 .fluteTassel::after {
   content: '';
   position: absolute;
-  bottom: -20px;
-  left: -8px;
-  width: 18px;
-  height: 20px;
-  background: repeating-linear-gradient(90deg, #d4af37 0px, #d4af37 2px, transparent 2px, transparent 4px);
-  border-radius: 2px;
+  bottom: -25px;
+  left: -12px;
+  width: 27px;
+  height: 30px;
+  background: repeating-linear-gradient(90deg, #1a1a1a 0px, #1a1a1a 3px, transparent 3px, transparent 6px);
+  border-radius: 3px;
 }
 
 /* Peacock Feather CSS */
 .peacockFeather {
   position: absolute;
-  top: 40px;
-  left: 80px;
-  width: 120px;
-  height: 200px;
-  transform: rotate(15deg);
-  z-index: -1;
+  top: 40%;
+  left: 55%;
+  width: 180px;
+  height: 300px;
+  transform: translate(-50%, -50%) rotate(15deg);
+  z-index: 1;
 }
 
 .featherStem {
   position: absolute;
   left: 50%;
-  bottom: 0;
-  width: 4px;
-  height: 100%;
-  background: #ffffff;
-  border-radius: 2px;
+  bottom: -40px;
+  width: 6px;
+  height: 120%;
+  background: #2a2a2a;
+  border-radius: 3px;
   transform: translateX(-50%);
-  box-shadow: -1px 0 2px rgba(0,0,0,0.1);
+  box-shadow: -2px 0 4px rgba(0,0,0,0.3);
 }
 
 .featherEye {
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
-  height: 60px;
-  background: #005f73;
+  width: 75px;
+  height: 90px;
+  background: #002b36;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  box-shadow: 0 0 10px #0a9396, inset 0 0 10px #001219;
+  box-shadow: 0 0 15px #001219, inset 0 0 15px #000000;
   z-index: 2;
   display: flex;
   align-items: center;
@@ -177,9 +159,9 @@
 }
 
 .featherInner {
-  width: 25px;
-  height: 35px;
-  background: #0a9396;
+  width: 38px;
+  height: 52px;
+  background: #0a4042;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   position: relative;
 }
@@ -187,26 +169,26 @@
 .featherInner::before {
   content: '';
   position: absolute;
-  top: 8px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 12px;
-  height: 16px;
-  background: #94d2bd;
+  width: 18px;
+  height: 24px;
+  background: #1b4b3c;
   border-radius: 50%;
 }
 
 .featherInner::after {
   content: '';
   position: absolute;
-  bottom: 4px;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
-  width: 16px;
-  height: 12px;
-  background: #e9d8a6;
+  width: 24px;
+  height: 18px;
+  background: #4a3e21;
   border-radius: 50%;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .featherHairs {
@@ -214,22 +196,22 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 160px;
-  background: radial-gradient(ellipse at 50% 30%, transparent 20%, #bb3e03 40%, #ae2012 60%, transparent 80%);
+  height: 240px;
+  background: radial-gradient(ellipse at 50% 30%, transparent 20%, #4a1902 40%, #2f0802 60%, transparent 80%);
   border-radius: 50%;
-  opacity: 0.6;
-  filter: blur(2px);
+  opacity: 0.8;
+  filter: blur(3px);
   z-index: 1;
 }
 
 .featherHairs::before {
   content: '';
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: 10px;
-  background: repeating-radial-gradient(ellipse at 50% 30%, transparent 0, transparent 4px, rgba(10, 147, 150, 0.4) 5px, transparent 6px);
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: 15px;
+  background: repeating-radial-gradient(ellipse at 50% 30%, transparent 0, transparent 6px, rgba(0, 43, 54, 0.6) 7px, transparent 9px);
   border-radius: 50%;
 }
 
@@ -250,25 +232,30 @@
 }
 
 .tagline {
-  font-family: var(--font-heading);
-  color: var(--color-gold);
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-family: var(--font-cormorant);
+  color: #5a4b29;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
   display: block;
-  margin-bottom: var(--spacing-md);
-  letter-spacing: 1px;
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: 2px;
 }
 
 .heroTitle {
-  font-size: 4rem;
-  color: var(--color-peacock-dark);
+  font-family: var(--font-cinzel);
+  font-size: 4.5rem;
+  color: #1a1a1a;
   margin-bottom: var(--spacing-lg);
   line-height: 1.1;
+  font-weight: 700;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.05);
 }
 
 .heroSubtitle {
-  font-size: 1.2rem;
-  color: var(--color-text-main);
+  font-family: var(--font-cormorant);
+  font-size: 1.5rem;
+  color: #333333;
   margin-bottom: var(--spacing-2xl);
   max-width: 600px;
   line-height: 1.6;

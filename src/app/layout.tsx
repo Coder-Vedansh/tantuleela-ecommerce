@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Outfit } from "next/font/google";
+import { Playfair_Display, Outfit, Cinzel_Decorative, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -9,6 +9,18 @@ const playfair = Playfair_Display({
 
 const outfit = Outfit({
   variable: "--font-outfit",
+  subsets: ["latin"],
+});
+
+const cinzel = Cinzel_Decorative({
+  variable: "--font-cinzel",
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -26,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${outfit.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${outfit.variable} ${cinzel.variable} ${cormorant.variable}`}>
       <body>
         <Navbar />
         <main>{children}</main>

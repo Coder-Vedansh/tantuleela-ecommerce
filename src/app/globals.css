@@ -18,6 +18,8 @@
   /* Typography */
   --font-heading: var(--font-playfair), serif;
   --font-body: var(--font-outfit), sans-serif;
+  --font-cinzel: var(--font-cinzel), 'Times New Roman', serif;
+  --font-cormorant: var(--font-cormorant), Georgia, serif;
 
   /* Spacing */
   --spacing-xs: 0.25rem;
