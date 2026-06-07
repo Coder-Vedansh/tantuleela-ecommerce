@@ -1,0 +1,102 @@
+.accountPage {
+  min-height: 100vh;
+  padding: 150px 20px 80px;
+  background-color: var(--color-bg-light);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  animation: fadeInUp 0.8s var(--transition-normal) forwards;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.title {
+  font-family: var(--font-cinzel);
+  font-size: 3rem;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.cardSection {
+  padding: var(--spacing-2xl);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.detailRow:last-child {
+  border-bottom: none;
+}
+
+.label {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.value {
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+.actions {
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  background-color: rgba(0,0,0,0.02);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logoutBtn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-bg-dark);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-spring);
+}
+
+.logoutBtn:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(200, 155, 71, 0.3);
+}
+
+/* Include keyframes since we used them */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); filter: blur(10px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
