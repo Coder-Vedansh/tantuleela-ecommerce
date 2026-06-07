@@ -37,7 +37,8 @@
   min-height: 400px;
 }
 
-.cssDecoration {
+/* SVG Decoration */
+.svgDecoration {
   position: relative;
   z-index: 3;
   width: 100%;
@@ -49,170 +50,12 @@
   pointer-events: none;
 }
 
-/* Flute CSS */
-.flute {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 350px;
-  height: 20px;
-  background: linear-gradient(to bottom, #3a2b10, #1f1709, #3a2b10);
-  border-radius: 10px;
-  transform: translate(-50%, -50%) rotate(-30deg);
-  box-shadow: 4px 8px 20px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 40px;
-  gap: 16px;
-  z-index: 2;
-}
-
-.flute::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 15px;
-  height: 100%;
-  background: #110d05;
-  border-radius: 10px 0 0 10px;
-}
-
-.flute::after {
-  content: '';
-  position: absolute;
-  left: 45px;
-  top: -3px;
-  width: 6px;
-  height: 26px;
-  background: #110d05;
-  border-radius: 3px;
-}
-
-.fluteHole {
-  width: 10px;
-  height: 10px;
-  background: #000000;
-  border-radius: 50%;
-  box-shadow: inset 1px 1px 3px rgba(0,0,0,1);
-}
-
-.fluteTassel {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 3px;
-  height: 80px;
-  background: #1a1a1a;
-  transform: rotate(30deg);
-}
-
-.fluteTassel::after {
-  content: '';
-  position: absolute;
-  bottom: -25px;
-  left: -12px;
-  width: 27px;
-  height: 30px;
-  background: repeating-linear-gradient(90deg, #1a1a1a 0px, #1a1a1a 3px, transparent 3px, transparent 6px);
-  border-radius: 3px;
-}
-
-/* Peacock Feather CSS */
-.peacockFeather {
-  position: absolute;
-  top: 40%;
-  left: 55%;
-  width: 180px;
-  height: 300px;
-  transform: translate(-50%, -50%) rotate(15deg);
-  z-index: 1;
-}
-
-.featherStem {
-  position: absolute;
-  left: 50%;
-  bottom: -40px;
-  width: 6px;
-  height: 120%;
-  background: #2a2a2a;
-  border-radius: 3px;
-  transform: translateX(-50%);
-  box-shadow: -2px 0 4px rgba(0,0,0,0.3);
-}
-
-.featherEye {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 75px;
-  height: 90px;
-  background: #002b36;
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  box-shadow: 0 0 15px #001219, inset 0 0 15px #000000;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.featherInner {
-  width: 38px;
-  height: 52px;
-  background: #0a4042;
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  position: relative;
-}
-
-.featherInner::before {
-  content: '';
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 24px;
-  background: #1b4b3c;
-  border-radius: 50%;
-}
-
-.featherInner::after {
-  content: '';
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 24px;
-  height: 18px;
-  background: #4a3e21;
-  border-radius: 50%;
-  opacity: 0.9;
-}
-
-.featherHairs {
-  position: absolute;
-  top: 0;
-  left: 0;
+.premiumSvg {
   width: 100%;
-  height: 240px;
-  background: radial-gradient(ellipse at 50% 30%, transparent 20%, #4a1902 40%, #2f0802 60%, transparent 80%);
-  border-radius: 50%;
-  opacity: 0.8;
-  filter: blur(3px);
-  z-index: 1;
-}
-
-.featherHairs::before {
-  content: '';
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  right: -15px;
-  bottom: 15px;
-  background: repeating-radial-gradient(ellipse at 50% 30%, transparent 0, transparent 6px, rgba(0, 43, 54, 0.6) 7px, transparent 9px);
-  border-radius: 50%;
+  height: auto;
+  max-width: 400px;
+  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.15));
+  animation: float 6s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes float {

@@ -35,23 +35,63 @@ export default async function Home() {
             </div>
           </div>
           <div className={styles.heroImageWrapper}>
-            <div className={styles.cssDecoration}>
-              <div className={styles.flute}>
-                <div className={styles.fluteHole}></div>
-                <div className={styles.fluteHole}></div>
-                <div className={styles.fluteHole}></div>
-                <div className={styles.fluteHole}></div>
-                <div className={styles.fluteHole}></div>
-                <div className={styles.fluteHole}></div>
-                <div className={styles.fluteTassel}></div>
-              </div>
-              <div className={styles.peacockFeather}>
-                <div className={styles.featherEye}>
-                  <div className={styles.featherInner}></div>
-                </div>
-                <div className={styles.featherStem}></div>
-                <div className={styles.featherHairs}></div>
-              </div>
+            <div className={styles.svgDecoration}>
+              <svg width="400" height="400" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.premiumSvg}>
+                <defs>
+                  <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1a1a1a" />
+                    <stop offset="100%" stopColor="#333333" />
+                  </linearGradient>
+                </defs>
+                
+                {/* Flute (Basuri) - Elegant minimalist representation */}
+                <g transform="translate(10, 80) rotate(-25)">
+                  {/* Flute Body */}
+                  <rect x="0" y="0" width="160" height="8" rx="4" fill="url(#darkGradient)" />
+                  <rect x="0" y="0" width="160" height="8" rx="4" stroke="#1a1a1a" strokeWidth="0.5" />
+                  
+                  {/* Flute Details (Bands) */}
+                  <rect x="15" y="-1" width="3" height="10" rx="1" fill="#1a1a1a" />
+                  <rect x="35" y="-1" width="2" height="10" rx="1" fill="#1a1a1a" />
+                  <rect x="140" y="-1" width="3" height="10" rx="1" fill="#1a1a1a" />
+
+                  {/* Flute Holes */}
+                  <circle cx="60" cy="4" r="2" fill="#000" />
+                  <circle cx="75" cy="4" r="2" fill="#000" />
+                  <circle cx="90" cy="4" r="2" fill="#000" />
+                  <circle cx="105" cy="4" r="2" fill="#000" />
+                  <circle cx="120" cy="4" r="2" fill="#000" />
+
+                  {/* Elegant Tassel */}
+                  <path d="M145,8 C150,20 135,30 145,45" stroke="url(#darkGradient)" strokeWidth="1" fill="none" />
+                  <path d="M145,8 C140,25 155,35 145,50" stroke="url(#darkGradient)" strokeWidth="0.5" fill="none" />
+                </g>
+
+                {/* Peacock Feather - Premium Line Art */}
+                <g transform="translate(100, 20) rotate(15)">
+                  {/* Stem */}
+                  <path d="M40,160 Q45,80 50,0" stroke="#1a1a1a" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+                  
+                  {/* Feather Hairs (Left) */}
+                  <path d="M48,20 Q30,10 25,25" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+                  <path d="M47,30 Q20,25 15,45" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+                  <path d="M46,40 Q10,40 10,65" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+                  <path d="M45,50 Q15,60 20,80" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+                  <path d="M44,60 Q25,75 30,90" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+
+                  {/* Feather Hairs (Right) */}
+                  <path d="M49,15 Q65,5 70,20" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+                  <path d="M48,25 Q75,20 80,40" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+                  <path d="M47,35 Q85,35 85,60" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+                  <path d="M46,45 Q75,55 70,75" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+                  <path d="M45,55 Q60,70 55,85" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+
+                  {/* Peacock Eye */}
+                  <path d="M50,5 C40,15 40,30 50,35 C60,30 60,15 50,5 Z" fill="url(#darkGradient)" />
+                  <path d="M50,12 C45,18 45,26 50,28 C55,26 55,18 50,12 Z" fill="#ffffff" opacity="0.2" />
+                  <circle cx="50" cy="22" r="3" fill="#1a1a1a" />
+                </g>
+              </svg>
             </div>
           </div>
         </div>
