@@ -44,7 +44,7 @@ export default async function Home() {
           <div className={styles.heroImageWrapper}>
             <div className={styles.imageBackglow}></div>
             <img 
-              src="/images/krishna-masterpiece.png" 
+              src="/images/krishna-teal-luxury.png" 
               alt="Masterpiece Luxury Handcrafted Crochet for Lord Krishna" 
               className={styles.heroImage}
             />
