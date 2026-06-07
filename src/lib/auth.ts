@@ -10,6 +10,30 @@ export const authOptions: AuthOptions = {
   },
   providers: [
     CredentialsProvider({
+      id: "admin-login",
+      name: "Admin Login",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        if (!credentials?.email || !credentials?.password) return null;
+        
+        if (
+          credentials.email === process.env.ADMIN_EMAIL &&
+          credentials.password === process.env.ADMIN_PASSWORD
+        ) {
+          return {
+            id: "admin-id",
+            email: credentials.email,
+            name: "Admin",
+          };
+        }
+        return null;
+      },
+    }),
+    CredentialsProvider({
+      id: "guest-checkout",
       name: "Guest Checkout",
       credentials: {
         email: { label: "Email", type: "email" },
