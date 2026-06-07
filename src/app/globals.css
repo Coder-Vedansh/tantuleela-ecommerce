@@ -1,19 +1,26 @@
 :root {
-  /* Brand Colors */
-  --color-cream: #FDFBF7;
-  --color-ivory: #FFFFF0;
-  --color-pastel-blue: #D6E4F0;
-  --color-peacock-blue: #005B8F;
-  --color-peacock-dark: #003F66;
-  --color-gold: #D4AF37;
-  --color-gold-light: #F3E5AB;
-
-  /* Neutrals */
-  --color-text-main: #2C3E50;
-  --color-text-muted: #6C7A89;
+  /* Luxury Color Palette */
+  --color-primary: #B08A44; /* Warm Gold */
+  --color-primary-dark: #8b6508;
+  --color-secondary: #0F6C8D; /* Peacock Blue */
+  --color-accent: #E6B9B2; /* Soft Rose */
+  
+  --color-bg-light: #F8F4EA; /* Ivory Base */
+  --color-bg-dark: #4A3522; /* Deep Brown */
+  
+  --color-text-main: #4A3522; /* Deep Brown for text */
+  --color-text-muted: #8c7b6c;
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+  
+  --color-gold: #B08A44;
+  --color-peacock-dark: #002b36;
+  --color-peacock-light: #0F6C8D;
+  --color-rose: #E6B9B2;
+  
+  --color-background: var(--color-bg-light);
+  --color-surface: var(--color-white);
   --color-border: #EAECEE;
-  --color-background: var(--color-cream);
-  --color-surface: #FFFFFF;
 
   /* Typography */
   --font-heading: var(--font-playfair), serif;

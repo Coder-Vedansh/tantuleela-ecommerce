@@ -1,11 +1,11 @@
 .navbar {
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--spacing-sm) 0;
+  background-color: transparent;
+  padding: var(--spacing-md) 0;
   transition: all var(--transition-normal);
 }
 
@@ -38,10 +38,11 @@
 }
 
 .logo {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  color: var(--color-peacock-blue);
-  letter-spacing: 1px;
+  font-family: var(--font-cinzel);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 2px;
   margin: 0;
   transition: color var(--transition-fast);
 }
@@ -100,7 +101,7 @@
   position: absolute;
   top: -8px;
   right: -8px;
-  background-color: var(--color-peacock-blue);
+  background-color: var(--color-primary);
   color: white;
   font-size: 0.7rem;
   font-weight: 600;
