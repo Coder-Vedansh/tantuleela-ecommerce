@@ -41,11 +41,24 @@ export default async function Home() {
               alt="Handcrafted Crochet for Lord Krishna" 
               className={styles.heroImage}
             />
-            <img 
-              src="/images/flute_peacock.png" 
-              alt="Lord Krishna Flute and Peacock" 
-              className={styles.heroDecoration}
-            />
+            <div className={styles.cssDecoration}>
+              <div className={styles.flute}>
+                <div className={styles.fluteHole}></div>
+                <div className={styles.fluteHole}></div>
+                <div className={styles.fluteHole}></div>
+                <div className={styles.fluteHole}></div>
+                <div className={styles.fluteHole}></div>
+                <div className={styles.fluteHole}></div>
+                <div className={styles.fluteTassel}></div>
+              </div>
+              <div className={styles.peacockFeather}>
+                <div className={styles.featherEye}>
+                  <div className={styles.featherInner}></div>
+                </div>
+                <div className={styles.featherStem}></div>
+                <div className={styles.featherHairs}></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
