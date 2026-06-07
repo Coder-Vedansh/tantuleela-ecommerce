@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 80px; /* Offset for sticky nav */
 }
 
 .heroBackground {
@@ -42,6 +41,7 @@
   grid-template-columns: 40% 60%;
   gap: var(--spacing-3xl);
   align-items: center;
+  padding-top: 100px; /* Push content below sticky nav */
 }
 
 .heroContent {
