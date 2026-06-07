@@ -24,8 +24,7 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
 });
 
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { ClientLayoutWrapper } from "@/components/ClientLayoutWrapper";
 
 export const metadata: Metadata = {
   title: "Sringarika | Handcrafted Crochet for Lord Krishna",
@@ -40,9 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} ${cinzel.variable} ${cormorant.variable}`}>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
   );
