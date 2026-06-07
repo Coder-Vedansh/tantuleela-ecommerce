@@ -38,58 +38,68 @@ export default async function Home() {
             <div className={styles.svgDecoration}>
               <svg width="400" height="400" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.premiumSvg}>
                 <defs>
-                  <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#1a1a1a" />
-                    <stop offset="100%" stopColor="#333333" />
+                  <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#d4af37" />
+                    <stop offset="50%" stopColor="#aa7c11" />
+                    <stop offset="100%" stopColor="#8b6508" />
                   </linearGradient>
+                  <linearGradient id="peacockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#005f73" />
+                    <stop offset="100%" stopColor="#0a9396" />
+                  </linearGradient>
+                  <radialGradient id="eyeGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#001219" />
+                    <stop offset="60%" stopColor="#005f73" />
+                    <stop offset="100%" stopColor="#94d2bd" />
+                  </radialGradient>
                 </defs>
                 
-                {/* Flute (Basuri) - Elegant minimalist representation */}
+                {/* Flute (Basuri) - Elegant representation */}
                 <g transform="translate(10, 80) rotate(-25)">
                   {/* Flute Body */}
-                  <rect x="0" y="0" width="160" height="8" rx="4" fill="url(#darkGradient)" />
-                  <rect x="0" y="0" width="160" height="8" rx="4" stroke="#1a1a1a" strokeWidth="0.5" />
+                  <rect x="0" y="0" width="160" height="8" rx="4" fill="url(#goldGradient)" />
+                  <rect x="0" y="0" width="160" height="8" rx="4" stroke="#5a4205" strokeWidth="0.5" />
                   
                   {/* Flute Details (Bands) */}
-                  <rect x="15" y="-1" width="3" height="10" rx="1" fill="#1a1a1a" />
-                  <rect x="35" y="-1" width="2" height="10" rx="1" fill="#1a1a1a" />
-                  <rect x="140" y="-1" width="3" height="10" rx="1" fill="#1a1a1a" />
+                  <rect x="15" y="-1" width="3" height="10" rx="1" fill="#5a4205" />
+                  <rect x="35" y="-1" width="2" height="10" rx="1" fill="#5a4205" />
+                  <rect x="140" y="-1" width="3" height="10" rx="1" fill="#5a4205" />
 
                   {/* Flute Holes */}
-                  <circle cx="60" cy="4" r="2" fill="#000" />
-                  <circle cx="75" cy="4" r="2" fill="#000" />
-                  <circle cx="90" cy="4" r="2" fill="#000" />
-                  <circle cx="105" cy="4" r="2" fill="#000" />
-                  <circle cx="120" cy="4" r="2" fill="#000" />
+                  <circle cx="60" cy="4" r="2" fill="#2a1e02" />
+                  <circle cx="75" cy="4" r="2" fill="#2a1e02" />
+                  <circle cx="90" cy="4" r="2" fill="#2a1e02" />
+                  <circle cx="105" cy="4" r="2" fill="#2a1e02" />
+                  <circle cx="120" cy="4" r="2" fill="#2a1e02" />
 
                   {/* Elegant Tassel */}
-                  <path d="M145,8 C150,20 135,30 145,45" stroke="url(#darkGradient)" strokeWidth="1" fill="none" />
-                  <path d="M145,8 C140,25 155,35 145,50" stroke="url(#darkGradient)" strokeWidth="0.5" fill="none" />
+                  <path d="M145,8 C150,20 135,30 145,45" stroke="url(#goldGradient)" strokeWidth="1.5" fill="none" />
+                  <path d="M145,8 C140,25 155,35 145,50" stroke="url(#goldGradient)" strokeWidth="1" fill="none" />
                 </g>
 
-                {/* Peacock Feather - Premium Line Art */}
+                {/* Peacock Feather - Premium Colored Art */}
                 <g transform="translate(100, 20) rotate(15)">
                   {/* Stem */}
-                  <path d="M40,160 Q45,80 50,0" stroke="#1a1a1a" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+                  <path d="M40,160 Q45,80 50,0" stroke="#e9d8a6" strokeWidth="1.5" fill="none" strokeLinecap="round" />
                   
                   {/* Feather Hairs (Left) */}
-                  <path d="M48,20 Q30,10 25,25" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
-                  <path d="M47,30 Q20,25 15,45" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
-                  <path d="M46,40 Q10,40 10,65" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
-                  <path d="M45,50 Q15,60 20,80" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
-                  <path d="M44,60 Q25,75 30,90" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+                  <path d="M48,20 Q30,10 25,25" stroke="url(#peacockGradient)" strokeWidth="1" fill="none" />
+                  <path d="M47,30 Q20,25 15,45" stroke="#0a9396" strokeWidth="1" fill="none" />
+                  <path d="M46,40 Q10,40 10,65" stroke="#94d2bd" strokeWidth="1" fill="none" />
+                  <path d="M45,50 Q15,60 20,80" stroke="url(#peacockGradient)" strokeWidth="1" fill="none" />
+                  <path d="M44,60 Q25,75 30,90" stroke="#005f73" strokeWidth="1" fill="none" />
 
                   {/* Feather Hairs (Right) */}
-                  <path d="M49,15 Q65,5 70,20" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
-                  <path d="M48,25 Q75,20 80,40" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
-                  <path d="M47,35 Q85,35 85,60" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
-                  <path d="M46,45 Q75,55 70,75" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
-                  <path d="M45,55 Q60,70 55,85" stroke="#1a1a1a" strokeWidth="0.5" fill="none" />
+                  <path d="M49,15 Q65,5 70,20" stroke="url(#peacockGradient)" strokeWidth="1" fill="none" />
+                  <path d="M48,25 Q75,20 80,40" stroke="#0a9396" strokeWidth="1" fill="none" />
+                  <path d="M47,35 Q85,35 85,60" stroke="#94d2bd" strokeWidth="1" fill="none" />
+                  <path d="M46,45 Q75,55 70,75" stroke="url(#peacockGradient)" strokeWidth="1" fill="none" />
+                  <path d="M45,55 Q60,70 55,85" stroke="#005f73" strokeWidth="1" fill="none" />
 
                   {/* Peacock Eye */}
-                  <path d="M50,5 C40,15 40,30 50,35 C60,30 60,15 50,5 Z" fill="url(#darkGradient)" />
-                  <path d="M50,12 C45,18 45,26 50,28 C55,26 55,18 50,12 Z" fill="#ffffff" opacity="0.2" />
-                  <circle cx="50" cy="22" r="3" fill="#1a1a1a" />
+                  <path d="M50,5 C35,15 35,35 50,40 C65,35 65,15 50,5 Z" fill="url(#eyeGradient)" />
+                  <path d="M50,15 C42,20 42,30 50,32 C58,30 58,20 50,15 Z" fill="#d4af37" />
+                  <circle cx="50" cy="24" r="4" fill="#001219" />
                 </g>
               </svg>
             </div>
