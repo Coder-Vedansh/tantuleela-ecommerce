@@ -4,11 +4,11 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: rgba(247, 243, 234, 0.4); /* Ivory transparent */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(200, 155, 71, 0.3); /* Thin gold divider */
-  padding: var(--spacing-md) 0;
+  background-color: rgba(247, 243, 234, 0.15); /* Much more transparent */
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(200, 155, 71, 0.4); /* Stronger gold divider */
+  box-shadow: 0 4px 30px rgba(6, 61, 74, 0.05); /* Subtle teal shadow */
   transition: all var(--transition-normal);
 }
 
@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
+  height: 70px;
 }
 
 .leftSection,

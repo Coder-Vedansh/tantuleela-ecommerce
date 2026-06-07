@@ -105,11 +105,11 @@
 
 .trustIndicators {
   font-size: 0.8rem;
-  color: var(--color-text-muted);
+  color: var(--color-accent); /* Ivory text over dark teal gradient */
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-top: var(--spacing-md);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .trustIndicators span {
@@ -192,8 +192,8 @@
 
 /* Story Section */
 .storySection {
-  padding: var(--spacing-3xl) 0;
-  background-color: var(--color-ivory);
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-sand); /* Matching luxury theme */
 }
 
 .storyContainer {
@@ -205,9 +205,11 @@
 
 .storyImageWrapper {
   position: relative;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  max-width: 80%; /* Make image smaller so it doesn't look too large */
+  margin: 0 auto;
 }
 
 .storyImageWrapper::after {
@@ -217,14 +219,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0 0 0 20px var(--color-ivory);
+  box-shadow: inset 0 0 0 10px var(--color-sand);
   pointer-events: none;
 }
 
 .storyImage {
   width: 100%;
   height: auto;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/4;
   object-fit: cover;
   transition: transform var(--transition-normal);
 }
@@ -247,7 +249,7 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: var(--color-gold);
+  background-color: var(--color-secondary); /* Dark Teal line */
 }
 
 .storyText {
