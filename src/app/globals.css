@@ -1,22 +1,22 @@
 :root {
-  /* Luxury Color Palette */
-  --color-primary: #B08A44; /* Warm Gold */
-  --color-primary-dark: #8b6508;
-  --color-secondary: #0F6C8D; /* Peacock Blue */
-  --color-accent: #E6B9B2; /* Soft Rose */
+  /* Luxury Footer-Aligned Color Palette */
+  --color-primary: #C89B47; /* Rich Temple Gold */
+  --color-primary-dark: #A67C33;
+  --color-secondary: #063D4A; /* Deep Peacock Teal */
+  --color-accent: #F7F3EA; /* Warm Ivory */
   
-  --color-bg-light: #F8F4EA; /* Ivory Base */
-  --color-bg-dark: #4A3522; /* Deep Brown */
+  --color-bg-light: #F7F3EA; /* Warm Ivory Base */
+  --color-bg-dark: #063D4A; /* Deep Peacock Teal Base */
   
-  --color-text-main: #4A3522; /* Deep Brown for text */
-  --color-text-muted: #8c7b6c;
+  --color-text-main: #2B1F17; /* Deep Brown for text */
+  --color-text-muted: #5e4c40;
   --color-white: #ffffff;
   --color-black: #1a1a1a;
   
-  --color-gold: #B08A44;
-  --color-peacock-dark: #002b36;
-  --color-peacock-light: #0F6C8D;
-  --color-rose: #E6B9B2;
+  --color-gold: #C89B47;
+  --color-peacock-dark: #042830;
+  --color-peacock-light: #0a5f70;
+  --color-sand: #DCC8A2;
   
   --color-background: var(--color-bg-light);
   --color-surface: var(--color-white);
@@ -24,7 +24,7 @@
 
   /* Typography */
   --font-heading: var(--font-playfair), serif;
-  --font-body: var(--font-outfit), sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
   --font-cinzel: var(--font-cinzel), 'Times New Roman', serif;
   --font-cormorant: var(--font-cormorant), Georgia, serif;
 

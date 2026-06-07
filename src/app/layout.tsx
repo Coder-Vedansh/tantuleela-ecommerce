@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Outfit, Cinzel_Decorative, Cormorant_Garamond } from "next/font/google";
+import { Playfair_Display, Inter, Cinzel_Decorative, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -7,8 +7,8 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${outfit.variable} ${cinzel.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable} ${cinzel.variable} ${cormorant.variable}`}>
       <body>
         <Navbar />
         <main>{children}</main>

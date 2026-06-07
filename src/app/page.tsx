@@ -20,61 +20,65 @@ export default async function Home() {
       <section className={styles.hero}>
         <div className={styles.heroBackground}>
           <div className={styles.templeTexture}></div>
-          <div className={styles.glowingParticles}></div>
+          <div className={styles.heroGradientOverlay}></div>
         </div>
         <div className={`container ${styles.heroContainer}`}>
           <div className={styles.heroContent}>
             <span className={styles.tagline}>सूत्रे सूत्रे भक्तिरस्ति, प्रेम्णा कृष्णः विभूष्यते॥</span>
             <h1 className={styles.heroTitle}>Every Thread<br/>Woven with<br/>Devotion</h1>
             <p className={styles.heroSubtitle}>
-              Handcrafted crochet dresses and divine accessories created with love for Lord Krishna.
+              Premium handcrafted crochet dresses and accessories for Lord Krishna idols.
             </p>
             <div className={styles.heroActions}>
               <Link href="/shop" passHref>
                 <Button size="lg" className={styles.btnSolidGold}>Explore Collection</Button>
               </Link>
               <Link href="/custom-orders" passHref>
-                <Button variant="outline" size="lg" className={styles.btnOutlineIvory}>Custom Orders</Button>
+                <Button variant="outline" size="lg" className={styles.btnOutlineGold}>Custom Orders</Button>
               </Link>
+            </div>
+            <div className={styles.trustIndicators}>
+              <span>Handmade</span> &bull; <span>Premium Yarn</span> &bull; <span>Custom Crafted</span> &bull; <span>Divine Inspired</span>
             </div>
           </div>
           <div className={styles.heroImageWrapper}>
-            <div className={styles.imageShadow}></div>
+            <div className={styles.imageBackglow}></div>
             <img 
-              src="/images/krishna-luxury-hero.png" 
-              alt="Luxury Handcrafted Crochet for Lord Krishna" 
+              src="/images/krishna-masterpiece.png" 
+              alt="Masterpiece Luxury Handcrafted Crochet for Lord Krishna" 
               className={styles.heroImage}
             />
           </div>
         </div>
       </section>
 
-      {/* Trust Badges Strip */}
-      <div className={styles.trustStrip}>
-        <div className={`container ${styles.trustContainer}`}>
-          <div className={styles.trustItem}><HeartHandshake size={20} /> <span>Handmade</span></div>
-          <div className={styles.trustItem}><PenTool size={20} /> <span>Custom Orders</span></div>
-          <div className={styles.trustItem}><Sparkles size={20} /> <span>Premium Yarn</span></div>
-          <div className={styles.trustItem}><Truck size={20} /> <span>Fast Delivery</span></div>
-        </div>
-      </div>
-
-      {/* Featured Collection Strip Overlay */}
-      <div className={styles.featuredStrip}>
-        <div className={`container ${styles.featuredContainer}`}>
-          {products.slice(0, 3).map((product) => (
-            <div key={product.id} className={styles.featuredCard}>
-              <div className={styles.featuredImageWrapper}>
-                {product.imageUrl && (
-                  <img src={product.imageUrl} alt={product.name} className={styles.featuredImage} />
-                )}
-              </div>
-              <div className={styles.featuredInfo}>
-                <h4>{product.name}</h4>
-                <p>₹{product.price}</p>
-              </div>
+      {/* Floating Premium Cards Strip */}
+      <div className={styles.floatingCardsStrip}>
+        <div className={`container ${styles.floatingCardsContainer}`}>
+          <div className={styles.floatingCard}>
+            <HeartHandshake className={styles.floatingIcon} size={28} />
+            <div className={styles.floatingText}>
+              <h4>Handmade in Vrindavan</h4>
             </div>
-          ))}
+          </div>
+          <div className={styles.floatingCard}>
+            <PenTool className={styles.floatingIcon} size={28} />
+            <div className={styles.floatingText}>
+              <h4>Custom Orders Available</h4>
+            </div>
+          </div>
+          <div className={styles.floatingCard}>
+            <Sparkles className={styles.floatingIcon} size={28} />
+            <div className={styles.floatingText}>
+              <h4>Premium Crochet Yarn</h4>
+            </div>
+          </div>
+          <div className={styles.floatingCard}>
+            <Truck className={styles.floatingIcon} size={28} />
+            <div className={styles.floatingText}>
+              <h4>Fast Delivery</h4>
+            </div>
+          </div>
         </div>
       </div>
 
