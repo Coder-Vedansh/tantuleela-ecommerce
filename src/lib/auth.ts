@@ -53,7 +53,7 @@ export const authOptions: AuthOptions = {
       return token;
     },
   },
-  pages: {
-    signIn: '/login', // Optional custom login page
-  },
+  // pages: {
+  //   signIn: '/login', // Optional custom login page
+  // },
 };
