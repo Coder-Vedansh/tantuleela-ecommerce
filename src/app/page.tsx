@@ -65,8 +65,8 @@ export default async function Home() {
           {products.slice(0, 3).map((product) => (
             <div key={product.id} className={styles.featuredCard}>
               <div className={styles.featuredImageWrapper}>
-                {product.images?.[0] && (
-                  <img src={product.images[0]} alt={product.name} className={styles.featuredImage} />
+                {product.imageUrl && (
+                  <img src={product.imageUrl} alt={product.name} className={styles.featuredImage} />
                 )}
               </div>
               <div className={styles.featuredInfo}>
