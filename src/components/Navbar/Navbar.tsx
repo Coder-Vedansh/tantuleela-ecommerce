@@ -38,6 +38,9 @@ export const Navbar = () => {
           <button className={styles.iconBtn} aria-label="Search">
             <Search size={20} />
           </button>
+          <Link href="/admin" className={styles.iconBtn} aria-label="Admin Dashboard" title="Admin Dashboard">
+            <User size={20} style={{ color: "var(--color-gold)" }} />
+          </Link>
           <Link href="/account" className={styles.iconBtn} aria-label="User Account">
             <User size={20} />
           </Link>
