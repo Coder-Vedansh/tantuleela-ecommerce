@@ -2,8 +2,14 @@ import React from 'react';
 import { ProductCard } from '@/components/ProductCard';
 import { Filter, ChevronDown } from 'lucide-react';
 import styles from './page.module.css';
+import { Metadata } from 'next';
 
 import prisma from '@/lib/prisma';
+
+export const metadata: Metadata = {
+  title: 'Shop Collection',
+  description: 'Explore our premium collection of handcrafted crochet dresses for Lord Krishna. Beautiful designs made with devotion.',
+};
 
 export const dynamic = 'force-dynamic';
 

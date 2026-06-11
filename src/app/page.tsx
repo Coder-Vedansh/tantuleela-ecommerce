@@ -24,10 +24,10 @@ export default async function Home() {
         </div>
         <div className={`container ${styles.heroContainer}`}>
           <div className={styles.heroContent}>
-            <span className={styles.tagline}>सूत्रे सूत्रे भक्तिरस्ति, प्रेम्णा कृष्णः विभूष्यते॥</span>
+            <span className={styles.tagline}>Welcome to Sringarika &bull; सूत्रे सूत्रे भक्तिरस्ति, प्रेम्णा कृष्णः विभूष्यते॥</span>
             <h1 className={styles.heroTitle}>Every Thread<br/>Woven with<br/>Devotion</h1>
             <p className={styles.heroSubtitle}>
-              Premium handcrafted crochet dresses and accessories for Lord Krishna idols.
+              Sringarika brings you premium handcrafted crochet dresses and accessories for Lord Krishna idols.
             </p>
             <div className={styles.heroActions}>
               <Link href="/shop" passHref>

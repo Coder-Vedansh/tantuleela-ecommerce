@@ -2,6 +2,12 @@ import React from 'react';
 import { Upload, Camera, Send } from 'lucide-react';
 import { Button } from '@/components/UI/Button';
 import styles from './page.module.css';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Custom Orders',
+  description: 'Request custom handcrafted crochet outfits for Lord Krishna. Share your vision and let us weave it into reality.',
+};
 
 export default function CustomOrdersPage() {
   return (

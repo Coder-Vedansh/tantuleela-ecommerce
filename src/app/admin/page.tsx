@@ -2,6 +2,15 @@ import React from 'react';
 import styles from './admin.module.css';
 import prisma from '@/lib/prisma';
 import { Package, ShoppingCart } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Admin Dashboard',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default async function AdminDashboard() {
   const productCount = await prisma.product.count();
