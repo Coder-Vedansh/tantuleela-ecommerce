@@ -1,29 +1,35 @@
 import React from 'react';
+import { notFound } from 'next/navigation';
 import { ShoppingBag, Heart, Star, Truck, ShieldCheck, Ruler } from 'lucide-react';
 import { Button } from '@/components/UI/Button';
 import styles from './page.module.css';
-
-// Mock function to simulate fetching product data
-const getProduct = (id: string) => {
-  return {
-    id,
-    name: "Peacock Motif Yellow Dress",
-    price: 1250,
-    description: "A beautiful handcrafted crochet dress for Lord Krishna, inspired by the vibrant colors of peacock feathers. Made with premium cotton yarn, ensuring comfort and elegance. Perfect for Janmashtami and other festive occasions.",
-    materials: ["100% Premium Cotton Yarn", "Gold-plated accent beads", "Soft inner lining"],
-    images: [
-      "https://placehold.co/800x1000/D6E4F0/2C3E50?text=Yellow+Dress+Front",
-      "https://placehold.co/800x1000/D6E4F0/2C3E50?text=Yellow+Dress+Back",
-      "https://placehold.co/800x1000/D6E4F0/2C3E50?text=Yellow+Dress+Detail"
-    ],
-    sizes: ["Size 0 (0-2 inches)", "Size 1 (2-3 inches)", "Size 2 (3-4 inches)", "Size 3 (4-5 inches)", "Size 4 (5-6 inches)"],
-    inStock: true,
-  };
-};
+import prisma from '@/lib/prisma';
 
 export default async function ProductDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
-  const product = getProduct(resolvedParams.id);
+  
+  const dbProduct = await prisma.product.findUnique({
+    where: { id: resolvedParams.id }
+  });
+
+  if (!dbProduct) {
+    notFound();
+  }
+
+  const product = {
+    id: dbProduct.id,
+    name: dbProduct.name,
+    price: dbProduct.price,
+    description: dbProduct.description,
+    materials: ["100% Premium Cotton Yarn", "Gold-plated accent beads", "Soft inner lining"],
+    images: [
+      dbProduct.imageUrl,
+      "https://placehold.co/800x1000/D6E4F0/2C3E50?text=Back+View",
+      "https://placehold.co/800x1000/D6E4F0/2C3E50?text=Detail+View"
+    ],
+    sizes: ["Size 0 (0-2 inches)", "Size 1 (2-3 inches)", "Size 2 (3-4 inches)", "Size 3 (4-5 inches)", "Size 4 (5-6 inches)"],
+    inStock: dbProduct.stock > 0,
+  };
 
   return (
     <div className={styles.productPage}>
