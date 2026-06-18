@@ -72,7 +72,7 @@
   background: white;
   border-radius: var(--radius-md);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  overflow: hidden;
+  overflow-x: auto;
 }
 
 .adminTable {
@@ -122,4 +122,57 @@
   height: 50px;
   object-fit: cover;
   border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .adminLayout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+  
+  .nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0;
+  }
+  
+  .navLink {
+    padding: 1rem;
+    white-space: nowrap;
+    margin-top: 0 !important;
+  }
+  
+  .navLink:last-child {
+    margin-left: auto;
+  }
+  
+  .sidebarHeader {
+    padding: 1rem;
+  }
+  
+  .mainContent {
+    padding: 1rem;
+  }
+  
+  .productsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .dashboardTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navLink {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
 }
