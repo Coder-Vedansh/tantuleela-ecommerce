@@ -24,6 +24,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
         price: data.price !== undefined ? parseFloat(data.price) : undefined,
         stock: data.stock !== undefined ? parseInt(data.stock, 10) : undefined,
         imageUrl: data.imageUrl,
+        materials: data.materials !== undefined ? (Array.isArray(data.materials) ? data.materials : []) : undefined,
       }
     });
 

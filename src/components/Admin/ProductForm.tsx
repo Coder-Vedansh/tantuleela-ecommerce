@@ -9,6 +9,7 @@ export interface ProductFormData {
   price: number;
   stock: number;
   imageUrl: string;
+  materials?: string[];
 }
 
 interface ProductFormProps {
@@ -24,14 +25,20 @@ export const ProductForm = ({ initialData, onSubmit, onCancel }: ProductFormProp
     price: initialData?.price || 0,
     stock: initialData?.stock || 10,
     imageUrl: initialData?.imageUrl || '/images/1.png',
+    materials: initialData?.materials || [],
   });
+  const [materialsInput, setMaterialsInput] = useState((initialData?.materials || []).join(', '));
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await onSubmit(formData);
+      const dataToSubmit = {
+        ...formData,
+        materials: materialsInput.split(',').map(m => m.trim()).filter(m => m !== '')
+      };
+      await onSubmit(dataToSubmit);
     } catch (error) {
       console.error(error);
       alert('Error saving product');
@@ -104,6 +111,18 @@ export const ProductForm = ({ initialData, onSubmit, onCancel }: ProductFormProp
           onChange={(e) => setFormData({...formData, imageUrl: e.target.value})}
           required
           placeholder="/images/1.png or https://..."
+          style={{ padding: '0.5rem', border: '1px solid #ccc', borderRadius: '4px' }}
+        />
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <label htmlFor="materials">Materials (comma-separated)</label>
+        <input 
+          type="text" 
+          id="materials"
+          value={materialsInput}
+          onChange={(e) => setMaterialsInput(e.target.value)}
+          placeholder="Premium Cotton, Gold Beads, Inner Lining"
           style={{ padding: '0.5rem', border: '1px solid #ccc', borderRadius: '4px' }}
         />
       </div>

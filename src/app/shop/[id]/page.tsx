@@ -19,7 +19,7 @@ export default async function ProductDetailsPage({ params }: { params: Promise<{
     name: dbProduct.name,
     price: dbProduct.price,
     description: dbProduct.description,
-    materials: ["100% Premium Cotton Yarn", "Gold-plated accent beads", "Soft inner lining"],
+    materials: dbProduct.materials && dbProduct.materials.length > 0 ? dbProduct.materials : ["100% Premium Cotton Yarn", "Gold-plated accent beads", "Soft inner lining"],
     images: [
       dbProduct.imageUrl,
       "https://placehold.co/800x1000/D6E4F0/2C3E50?text=Back+View",

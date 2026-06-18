@@ -43,6 +43,7 @@ export default function AdminProductsPage() {
       price: product.price,
       stock: product.stock,
       imageUrl: product.imageUrl,
+      materials: product.materials,
     });
     setIsModalOpen(true);
   };

@@ -40,6 +40,7 @@ export async function POST(request: Request) {
         price: parseFloat(data.price),
         stock: parseInt(data.stock, 10),
         imageUrl: data.imageUrl,
+        materials: Array.isArray(data.materials) ? data.materials : [],
       }
     });
 

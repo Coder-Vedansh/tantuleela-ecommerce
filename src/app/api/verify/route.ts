@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 import prisma from '@/lib/prisma';
+import { sendTelegramNotification } from '@/lib/telegram';
 
 export async function POST(req: Request) {
   try {
@@ -16,10 +17,16 @@ export async function POST(req: Request) {
 
     if (isAuthentic) {
       // Payment is successful, update DB order status
-      await prisma.order.update({
+      const updatedOrder = await prisma.order.update({
         where: { id: internalOrderId },
-        data: { status: "PAID" }
+        data: { status: "PAID" },
+        include: { orderItems: true }
       });
+
+      const itemsList = updatedOrder.orderItems.map(item => `- ${item.quantity}x ${item.productName}`).join('\n');
+      const message = `🎉 <b>New Paid Order!</b>\n\n<b>Amount:</b> ₹${updatedOrder.totalAmount}\n<b>Name:</b> ${updatedOrder.shippingName}\n<b>Phone:</b> ${updatedOrder.shippingPhone}\n<b>Address:</b> ${updatedOrder.shippingAddress}\n\n<b>Items:</b>\n${itemsList}`;
+      
+      await sendTelegramNotification(message);
 
       return NextResponse.json({ success: true }, { status: 200 });
     } else {
