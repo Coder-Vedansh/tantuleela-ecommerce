@@ -30,7 +30,7 @@ export default async function AdminDashboard() {
         <p>Welcome to the Sringarika admin portal.</p>
       </div>
 
-      <div style={{ display: 'flex', gap: '2rem', marginBottom: '3rem' }}>
+      <div className={styles.statsContainer}>
         <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', flex: 1, display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <div style={{ background: 'var(--color-cream)', padding: '1rem', borderRadius: '50%', color: 'var(--color-peacock-dark)' }}>
             <Package size={32} />

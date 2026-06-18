@@ -41,7 +41,7 @@ export const ProductForm = ({ initialData, onSubmit, onCancel }: ProductFormProp
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', background: 'white', padding: '2rem', borderRadius: '8px', width: '100%', maxWidth: '500px' }}>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', background: 'white', padding: '1.5rem', borderRadius: '8px', width: '100%', maxWidth: '500px', margin: 'auto' }}>
       <h2>{initialData ? 'Edit Product' : 'Add New Product'}</h2>
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
