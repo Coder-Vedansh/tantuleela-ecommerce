@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 import prisma from '@/lib/prisma';
-import { sendTelegramNotification } from '@/lib/telegram';
+import { sendEmailNotification } from '@/lib/email';
 
 export async function POST(req: Request) {
   try {
@@ -23,10 +23,19 @@ export async function POST(req: Request) {
         include: { orderItems: true }
       });
 
-      const itemsList = updatedOrder.orderItems.map(item => `- ${item.quantity}x ${item.productName}`).join('\n');
-      const message = `🎉 <b>New Paid Order!</b>\n\n<b>Amount:</b> ₹${updatedOrder.totalAmount}\n<b>Name:</b> ${updatedOrder.shippingName}\n<b>Phone:</b> ${updatedOrder.shippingPhone}\n<b>Address:</b> ${updatedOrder.shippingAddress}\n\n<b>Items:</b>\n${itemsList}`;
+      const itemsList = updatedOrder.orderItems.map(item => `<li>${item.quantity}x ${item.productName}</li>`).join('');
+      const htmlMessage = `
+        <h2>🎉 New Paid Order!</h2>
+        <p><strong>Order ID:</strong> ${updatedOrder.id}</p>
+        <p><strong>Amount:</strong> ₹${updatedOrder.totalAmount}</p>
+        <p><strong>Name:</strong> ${updatedOrder.shippingName}</p>
+        <p><strong>Phone:</strong> ${updatedOrder.shippingPhone}</p>
+        <p><strong>Address:</strong> ${updatedOrder.shippingAddress}</p>
+        <h3>Items:</h3>
+        <ul>${itemsList}</ul>
+      `;
       
-      await sendTelegramNotification(message);
+      await sendEmailNotification(`New Order: ₹${updatedOrder.totalAmount} from ${updatedOrder.shippingName}`, htmlMessage);
 
       return NextResponse.json({ success: true }, { status: 200 });
     } else {
