@@ -13,9 +13,7 @@ export const Footer = () => {
             Every Thread Woven with Devotion. Handcrafted crochet dresses and accessories for Lord Krishna idols, made with love and patience.
           </p>
           <div className={styles.socialLinks}>
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="Facebook">FB</a>
-            <a href="#" aria-label="Twitter">TW</a>
+            <a href="https://www.instagram.com/realsringarika?igsh=dWJueXlpeXdpNzhh" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
           </div>
         </div>
 
@@ -46,15 +44,15 @@ export const Footer = () => {
           <ul className={styles.contactList}>
             <li>
               <Mail size={16} />
-              <a href="mailto:namaste@sringarika.com">namaste@sringarika.com</a>
+              <a href="mailto:sringarika0001@gmail.com">sringarika0001@gmail.com</a>
             </li>
             <li>
               <Phone size={16} />
-              <a href="tel:+919876543210">+91 98765 43210</a>
+              <a href="tel:+917906487090">+91 7906487090</a>
             </li>
             <li>
-              <MapPin size={16} />
-              <span>Vrindavan, Uttar Pradesh, India</span>
+              <MapPin size={16} style={{ flexShrink: 0 }} />
+              <span>23, Ph-3, Shekhar Residency, Sikandra, Agra</span>
             </li>
           </ul>
         </div>
