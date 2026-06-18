@@ -415,6 +415,25 @@
 
 /* Media Queries */
 @media (max-width: 992px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 120px;
+    gap: var(--spacing-xl);
+  }
+
+  .heroImageWrapper {
+    grid-row: 2;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .heroSubtitle {
+    margin: 0 auto var(--spacing-xl);
+  }
+
   .storyContainer {
     grid-template-columns: 1fr;
   }
